@@ -1,12 +1,17 @@
 export class TodoItem {
-	public id: number;
-	public task: string;
-	public complete: boolean = false;
+	// public id: number;
+	// public task: string;
+	// public complete: boolean = false;
 
-	public constructor(ids: number, tasks: string, completes: boolean = false) {
-		this.id = ids;
-		this.task = tasks;
-		this.complete = completes;
+	public constructor(
+		public id: number,
+		public task: string,
+		public complete: boolean = false
+	) {
+		// this.id = id;
+		// this.task = task;
+		// this.complete = complete;
+		/// No statements are required due to delcare public within constructor
 	}
 
 	public printDetails(): void {
