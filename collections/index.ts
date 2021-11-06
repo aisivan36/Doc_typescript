@@ -3,7 +3,7 @@ import { TodoCollection } from "./todoCollection";
 
 let todos = [
 	new TodoItem(1, "Buy A Car"),
-	new TodoItem(2, "Take a bottle watter", true),
+	new TodoItem(2, "Take a bottle watter"),
 	new TodoItem(3, "Collect Goods"),
 	new TodoItem(4, "Call Ivan", true),
 ];
