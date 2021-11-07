@@ -14,8 +14,9 @@ let showCompleted = true;
 
 function displayTodoList(): void {
 	console.log(
-		`${collection.userName}'s Todo List ` +
-			`(${collection.getItemCounts().incomplete} items to do)`
+		`
+    ${collection.userName}'s Todo List ` +
+			`   (${collection.getItemCounts().incomplete} items to do)`
 	);
 	collection.getTodoItems(showCompleted).forEach((item) => item.printDetails());
 }
@@ -33,12 +34,12 @@ function promptUser(): void {
 			type: "list",
 			name: "command",
 			message: "Choose option",
-			choice: Object.values(Commands),
+			choices: Object.values(Commands),
 			// badProperty: true,
 		})
 		.then((answer) => {
 			// if (answer["command"] !== Commands.Quit) {
-			switch (answer["coomand"]) {
+			switch (answer["command"]) {
 				case Commands.Toggle:
 					showCompleted = !showCompleted;
 					promptUser();
@@ -50,10 +51,10 @@ function promptUser(): void {
 promptUser();
 
 console.clear();
-// console.log(`${collection.userName}'s Todo List`);
+// console.log(${collection.userName}'s Todo List);
 console.log(
-	`${collection.userName}'s Todo List` +
-		`(${collection.getItemCounts().incomplete} items to do)`
+	` ${collection.userName}'s Todo List` +
+		` (${collection.getItemCounts().incomplete} items to do)`
 );
 
 // let newId = collection.addTodo("Go for fun");
