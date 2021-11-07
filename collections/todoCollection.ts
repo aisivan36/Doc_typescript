@@ -1,5 +1,10 @@
 import { TodoItem } from "./todoItem";
 
+type ItemCounts = {
+	total: number;
+	incomplete: number;
+};
+
 export class TodoCollection {
 	private nextId: number = 1;
 
@@ -25,7 +30,7 @@ export class TodoCollection {
 	}
 
 	getTodoItems(includeComplete: boolean): TodoItem[] {
-		return [...this.itemMap.values()].filter(
+		return Array.from(this.itemMap.values()).filter(
 			(item) => includeComplete || !item.complete
 		);
 	}
@@ -35,5 +40,20 @@ export class TodoCollection {
 		if (todoItem) {
 			todoItem.complete = complete;
 		}
+	}
+
+	removeComplete() {
+		this.itemMap.forEach((item) => {
+			if (item.complete) {
+				this.itemMap.delete(item.id);
+			}
+		});
+	}
+
+	getItemCounts(): ItemCounts {
+		return {
+			total: this.itemMap.size,
+			incomplete: this.getTodoItems(false).length,
+		};
 	}
 }
