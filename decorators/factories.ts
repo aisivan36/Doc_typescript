@@ -3,7 +3,7 @@ function first() {
 	return function (
 		target: any,
 		propertyKey: string,
-		descriptor: PropertyDescriptor
+		_descriptor: PropertyDescriptor
 	) {
 		console.log("First(): called");
 	};
@@ -14,7 +14,7 @@ function second() {
 	return function (
 		target: any,
 		propertyKey: string,
-		descriptor: PropertyDescriptor
+		_descriptor: PropertyDescriptor
 	) {
 		console.log("second(): called");
 	};
