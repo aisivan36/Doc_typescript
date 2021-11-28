@@ -1,0 +1,2 @@
+to compile directly
+tsc --target ES5 --experimentalDecorators decorators/factories.ts
